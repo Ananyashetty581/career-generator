@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Career Content Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="inner hero"><div><h1>🎓 AI Career Content Generator</h1><p>Personalized career profile, skill-gap analysis, learning plan and interview prep</p></div>
+<svg class="art" viewBox="0 0 220 140" aria-hidden="true"><rect x="8" y="96" width="30" height="36" rx="4" fill="#bfdbfe"/><rect x="48" y="76" width="30" height="56" rx="4" fill="#93c5fd"/><rect x="88" y="52" width="30" height="80" rx="4" fill="#60a5fa"/><rect x="128" y="28" width="30" height="104" rx="4" fill="#fff"/><polyline points="20,86 63,62 103,40 143,16" fill="none" stroke="#fde68a" stroke-width="4" stroke-linecap="round"/><circle cx="143" cy="16" r="6" fill="#fde68a"/><polygon points="188,40 214,52 188,64 162,52" fill="#fff"/><path d="M174 58v14c0 6 28 6 28 0V58" fill="none" stroke="#fff" stroke-width="4"/><line x1="214" y1="52" x2="214" y2="72" stroke="#fde68a" stroke-width="3"/></svg></div></header>
+<main>
+  <section class="card">
+    <h2>Your details</h2>
+    <div class="grid">
+      <div><label for="name">Name</label><input id="name" placeholder="e.g. Priya Sharma"></div>
+      <div><label for="goal">Career goal</label><input id="goal" placeholder="e.g. Data Analyst"></div>
+      <div><label for="skills">Skills</label><textarea id="skills" placeholder="Python, SQL, Excel, statistics"></textarea></div>
+      <div><label for="interests">Academic interests</label><textarea id="interests" placeholder="Machine learning, data visualization"></textarea></div>
+    </div>
+    <div id="keybox"><label for="key">Gemini API key (stays in your browser only, never uploaded)</label><input id="key" type="password" placeholder="Paste your free key from aistudio.google.com"><label class="rem"><input type="checkbox" id="rem" checked> Remember my key on this device</label></div>
+    <button id="go">Generate my career kit</button>
+    <p id="status" class="note"></p>
+  </section>
+
+  <div id="results" class="hide">
+    <section class="card">
+      <h2>Analysis dashboard</h2>
+      <div class="kpis"><div class="kpi"><b>🎯</b><span id="kRole">-</span><small>Target role</small></div><div class="kpi"><b>📈</b><span id="kScore">-</span><small>Readiness score</small></div><div class="kpi"><b>🧩</b><span id="kGaps">-</span><small>Skill gaps found</small></div></div>
+      <div class="charts">
+        <div class="chart"><h3>Current vs required skills</h3><canvas id="cRadar"></canvas></div>
+        <div class="chart"><h3>Career readiness</h3><canvas id="cDonut"></canvas></div>
+        <div class="chart"><h3>Skill gap size</h3><canvas id="cBar"></canvas></div>
+        <div class="chart"><h3>Weekly study hours</h3><canvas id="cLine"></canvas></div>
+      </div>
+    </section>
+    <section class="card">
+      <div class="bar"><h2>Your career kit</h2><button id="dl" class="dl">⬇ Download report</button></div>
+      <div class="tabs" id="tabs"></div>
+      <div id="panels"></div>
+    </section>
+  </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
